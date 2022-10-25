@@ -63,63 +63,94 @@ goto Services
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Services.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Services.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Services.cmd
+echo.
+echo.
 pause
 
 :: Cleanup
 goto Cleanup
 
 :Cleanup 
+cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Cleanup.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Cleanup.cmd
+echo.
+echo.
+pause
 
 :: Cleanup Event Logs
 goto CleanupEventLogs
 
 :CleanupEventLogs
+cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/CleanupEventLogs.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start CleanupEventLogs.cmd
+echo.
+echo.
+pause
 
 :: Scoop Update / RM : Cleanup
 goto scoop
 
 :scoop
+cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start scoop.cmd
+echo.
+echo.
+pause
 
 :: Set Priority
 goto Priority
 
 :Priority
+cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Priority.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Priority.cmd
+echo.
+echo.
+pause
 
 :: Refresh Network
 goto RefreshNetwork
 
 :RefreshNetwork
+cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/RefreshNetwork.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start RefreshNetwork.cmd
+echo.
+echo.
+pause
 
 :: Defrag
 goto Defrag
 
 :Defrag
+cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
-cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
+cd "C:\Users\%username%\Documents\"
 start Defrag.cmd
+echo.
+echo.
+pause
 
 :: Checkup
 goto Checkup
 
 :Checkup
+cls
+del /F /Q "C:\Users\%username%\Documents\Defrag.cmd"
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Checkup.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Checkup.cmd
+echo.
+echo.
+pause
 
 :: End
 goto End
