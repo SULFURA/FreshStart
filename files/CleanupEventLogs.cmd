@@ -4,7 +4,6 @@ IF (%adminTest%)==(Access) goto noAdmin
 for /F "tokens=*" %%G in ('wevtutil.exe el') DO (call :do_clear "%%G")
 echo.
 echo All Event Logs have been cleared!
-goto theEnd
 
 :do_clear
 echo clearing %1
