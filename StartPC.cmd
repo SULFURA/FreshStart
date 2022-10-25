@@ -153,7 +153,7 @@ rmdir /S /Q "C:\SULFURAX\StartPC\DeviceCleanupCmd\"
 del /F /Q "C:\SULFURAX\StartPC\AdwCleaner.exe"
 del /F /Q "C:\SULFURAX\StartPC\EmptyStandbyList.exe"
 
-curl -g -L -# -o "C:\SULFURAX\StartPC\EmptyStandbyList.exe" "https://wj32.org/wp/download/1455/"
+:: curl -g -L -# -o "C:\SULFURAX\StartPC\EmptyStandbyList.exe" "https://wj32.org/wp/download/1455/"
 curl -g -L -# -o "C:\SULFURAX\StartPC\DeviceCleanupCmd.zip" "https://www.uwe-sieber.de/files/DeviceCleanupCmd.zip"
 curl -g -L -# -o "C:\SULFURAX\StartPC\AdwCleaner.exe" "https://adwcleaner.malwarebytes.com/adwcleaner?channel=release"
 
@@ -170,7 +170,7 @@ del /Q C:\Windows\Prefetch\*.*
 cd C:\SULFURAX\StartPC
 AdwCleaner.exe /eula /clean /noreboot
 
-for %%g in (workingsets modifiedpagelist standbylist priority0standbylist) do EmptyStandbyList.exe %%g
+:: for %%g in (workingsets modifiedpagelist standbylist priority0standbylist) do EmptyStandbyList.exe %%g
 cd "C:\SULFURAX\StartPC\DeviceCleanupCmd\x64"
 DeviceCleanupCmd.exe *
 
