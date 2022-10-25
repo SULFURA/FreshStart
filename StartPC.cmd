@@ -55,13 +55,15 @@ title Script en cours...
 
 :Script
 C:
+rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 :: Services
 goto Services
 
 :Services
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Services.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Services.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start Services.cmd >nul 2>&1
+start Services.cmd
+pause
 
 :: Cleanup
 goto Cleanup
@@ -69,7 +71,7 @@ goto Cleanup
 :Cleanup 
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Cleanup.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start Cleanup.cmd >nul 2>&1
+start Cleanup.cmd
 
 :: Cleanup Event Logs
 goto CleanupEventLogs
