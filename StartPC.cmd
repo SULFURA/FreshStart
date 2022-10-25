@@ -65,7 +65,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Services.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 20
 
 :: Cleanup
 goto Cleanup
@@ -77,7 +77,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Cleanup.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 60
 
 :: Cleanup Event Logs
 goto CleanupEventLogs
@@ -89,7 +89,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start CleanupEventLogs.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 20
 
 :: Scoop Update / RM : Cleanup
 goto scoop
@@ -101,7 +101,7 @@ cd "C:\Users\%username%\Documents\StartPC\"
 start scoop.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 20
 
 :: Set Priority
 goto Priority
@@ -113,7 +113,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Priority.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 20
 
 :: Refresh Network
 goto RefreshNetwork
@@ -125,7 +125,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start RefreshNetwork.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 20
 
 :: Defrag
 goto Defrag
@@ -137,7 +137,7 @@ cd "C:\Users\%username%\Documents\"
 start Defrag.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 60
 
 :: Checkup
 goto Checkup
@@ -149,7 +149,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Checkup.cmd
 echo.
 echo.
-timeout /t 60 /nobreak
+timeout /t 60
 
 :: End
 goto End
@@ -158,6 +158,7 @@ goto End
 del /F /Q "C:\Users\%username%\Documents\Defrag.cmd"
 del /F /Q "C:\Users\%username%\Documents\scoop.cmd"
 
+cls
 echo Fin du Script
 title Fin du Script
 
