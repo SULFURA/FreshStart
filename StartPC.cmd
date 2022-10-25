@@ -147,7 +147,8 @@ cls
 :Cleanup 
 title Etape 2 : Cleanup
 
-echo "Click on the cleaner in your taskbar and put your mouse on the window"
+echo Click on the cleaner in your taskbar and put your mouse on the window
+cd "C:\SULFURAX\StartPC"
 
 cleanmgr.exe /d C: /SAGERUN:1
 
@@ -155,7 +156,7 @@ rmdir /S /Q "C:\SULFURAX\StartPC\DeviceCleanupCmd\"
 del /F /Q "C:\SULFURAX\StartPC\AdwCleaner.exe"
 del /F /Q "C:\SULFURAX\StartPC\EmptyStandbyList.exe"
 
-:: curl -g -L -# -o "C:\SULFURAX\StartPC\EmptyStandbyList.exe" "https://wj32.org/wp/download/1455/"
+REM curl -g -L -# -o "C:\SULFURAX\StartPC\EmptyStandbyList.exe" "https://wj32.org/wp/download/1455/"
 curl -g -L -# -o "C:\SULFURAX\StartPC\DeviceCleanupCmd.zip" "https://www.uwe-sieber.de/files/DeviceCleanupCmd.zip"
 curl -g -L -# -o "C:\SULFURAX\StartPC\AdwCleaner.exe" "https://adwcleaner.malwarebytes.com/adwcleaner?channel=release"
 
@@ -172,7 +173,7 @@ del /Q C:\Windows\Prefetch\*.*
 cd C:\SULFURAX\StartPC
 AdwCleaner.exe /eula /clean /noreboot
 
-:: for %%g in (workingsets modifiedpagelist standbylist priority0standbylist) do EmptyStandbyList.exe %%g
+REM for %%g in (workingsets modifiedpagelist standbylist priority0standbylist) do EmptyStandbyList.exe %%g
 cd "C:\SULFURAX\StartPC\DeviceCleanupCmd\x64"
 DeviceCleanupCmd.exe *
 
