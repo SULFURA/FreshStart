@@ -50,95 +50,95 @@ reg export HKCU C:\SULFURAX\Backup\%date1%\HKCU.reg /y >nul 2>&1
 
 :: Script
 cls
-goto Script
+goto Script >nul 2>&1
 title Script en cours...
 
 :Script
 :: Services
-goto Services
+goto Services >nul 2>&1
 
 :: Cleanup
-goto Cleanup
+goto Cleanup >nul 2>&1
 
 :: Cleanup Event Logs
-goto CleanupEventLogs
+goto CleanupEventLogs >nul 2>&1
 
 :: Scoop Update / RM : Cleanup
-goto scoop
+goto scoop >nul 2>&1
 
 :: Set Priority
-goto Priority
+goto Priority >nul 2>&1
 
 :: Refresh Network
-goto RefreshNetwork
+goto RefreshNetwork >nul 2>&1
 
 :: Defrag
-goto Defrag
+goto Defrag >nul 2>&1
 
 :: Checkup
-goto Checkup
+goto Checkup >nul 2>&1
 
 :: End
-goto End
+goto End >nul 2>&1
 
 :Services
 title Etape 1 : Services
 
 :: Start AppInfo Service
-sc config AppInfo start=auto
-sc start AppInfo
+sc config AppInfo start=auto >nul 2>&1
+sc start AppInfo >nul 2>&1
 
 :: Start BAM Service
-sc config BAM start= AUTO
-sc start BAM start
+sc config BAM start= AUTO >nul 2>&1
+sc start BAM start >nul 2>&1
 
 :: Start BITS Service
-sc config BITS start=auto
-sc start BITS
+sc config BITS start=auto >nul 2>&1 
+sc start BITS >nul 2>&1
 
-:: Start CDPUserSvc_1675c6 Service
-sc config CDPUserSvc_1675c6 start=auto
-sc start CDPUserSvc_1675c6
+:: Start CDPUserSvc_1675c6 Service 
+sc config CDPUserSvc_1675c6 start=auto >nul 2>&1
+sc start CDPUserSvc_1675c6 >nul 2>&1
 
 :: Stop clicktorunsvc Service
-sc config clicktorunsvc start=disabled
-sc stop clicktorunsvc
+sc config clicktorunsvc start=disabled >nul 2>&1 
+sc stop clicktorunsvc >nul 2>&1
 
 :: Start DiagTrack Service
-sc config DiagTrack start= AUTO
-sc start DiagTrack start
+sc config DiagTrack start= AUTO >nul 2>&1
+sc start DiagTrack start >nul 2>&1
 
 :: Start DNS Service
-sc config dnscache start= AUTO
-sc start dnscache start
+sc config dnscache start= AUTO >nul 2>&1
+sc start dnscache start >nul 2>&1
 
 :: Start DPS Service
-sc config DPS start= AUTO
-sc start DPS start
+sc config DPS start= AUTO >nul 2>&1
+sc start DPS start >nul 2>&1
 
 :: Start Dusmsvc Service
-sc config Dusmsvc start= AUTO
-sc start Dusmsvc start
+sc config Dusmsvc start= AUTO >nul 2>&1
+sc start Dusmsvc start >nul 2>&1
 
 :: Start Eventlog Service
-sc config Eventlog start= AUTO
-sc start Eventlog start
+sc config Eventlog start= AUTO >nul 2>&1
+sc start Eventlog start >nul 2>&1
 
 :: Start PCA Service
-sc config PcaSvc start= AUTO
-sc start PcaSvc start
+sc config PcaSvc start= AUTO >nul 2>&1
+sc start PcaSvc start >nul 2>&1
 
 :: Start SGRMBroker Service
-sc config SGRMBroker start= AUTO
-sc start SGRMBroker
+sc config SGRMBroker start= AUTO >nul 2>&1
+sc start SGRMBroker >nul 2>&1
 
 :: Start SysMain/Superfetch Service
-sc config SysMain start= AUTO
-sc start SysMain start
+sc config SysMain start= AUTO >nul 2>&1
+sc start SysMain start >nul 2>&1
 
 :: Start WSearch Service
-sc config WSearch start= AUTO
-sc start WSearch
+sc config WSearch start= AUTO >nul 2>&1
+sc start WSearch >nul 2>&1
 
 :: Clear CMD
 timeout /t 5 /nobreak
