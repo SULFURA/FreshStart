@@ -147,6 +147,8 @@ cls
 :Cleanup 
 title Etape 2 : Cleanup
 
+echo "Click on the cleaner in your taskbar and put your mouse on the window"
+
 cleanmgr.exe /d C: /SAGERUN:1
 
 rmdir /S /Q "C:\SULFURAX\StartPC\DeviceCleanupCmd\"
