@@ -65,7 +65,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Services.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: Cleanup
 goto Cleanup
@@ -77,7 +77,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Cleanup.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: Cleanup Event Logs
 goto CleanupEventLogs
@@ -89,19 +89,19 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start CleanupEventLogs.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: Scoop Update / RM : Cleanup
 goto scoop
 
 :scoop
 cls
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
-cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
+curl -g -L -# -o "C:\Users\%username%\Documents\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
+cd "C:\Users\%username%\Documents\StartPC\"
 start scoop.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: Set Priority
 goto Priority
@@ -113,7 +113,7 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Priority.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: Refresh Network
 goto RefreshNetwork
@@ -125,37 +125,39 @@ cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start RefreshNetwork.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: Defrag
 goto Defrag
 
 :Defrag
 cls
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
+curl -g -L -# -o "C:\Users\%username%\Documents\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
 cd "C:\Users\%username%\Documents\"
 start Defrag.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: Checkup
 goto Checkup
 
 :Checkup
 cls
-del /F /Q "C:\Users\%username%\Documents\Defrag.cmd"
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Checkup.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Checkup.cmd
 echo.
 echo.
-pause
+timeout /t 60 /nobreak
 
 :: End
 goto End
 
 :End
+del /F /Q "C:\Users\%username%\Documents\Defrag.cmd"
+del /F /Q "C:\Users\%username%\Documents\scoop.cmd"
+
 echo Fin du Script
 title Fin du Script
 
