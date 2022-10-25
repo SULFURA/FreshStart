@@ -5,9 +5,9 @@ title Script StartPC
 setlocal EnableDelayedExpansion
 
 :: Dossier
-mkdir C:\SULFURAX\StartPC >nul 2>&1
-mkdir C:\SULFURAX\Backup >nul 2>&1
-cd C:\SULFURAX\StartPC >nul 2>&1
+mkdir C:\Users\%username%\Documents\StartPC >nul 2>&1
+mkdir C:\Users\%username%\Documents\Backup >nul 2>&1
+cd C:\Users\%username%\Documents\StartPC >nul 2>&1
 
 :: Run Admin
 Reg.exe add HKLM /F >nul 2>&1
@@ -58,69 +58,69 @@ C:
 :: Services
 goto Services
 
+:Services
+curl -g -L -# -o "C:\Users\%username%\Documents\StartPC\Services.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Services.cmd"
+cd "C:\Users\%username%\Documents\"
+start Services.cmd
+
 :: Cleanup
 goto Cleanup
+
+:Cleanup 
+curl -g -L -# -o "C:\Users\%username%\Documents\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Cleanup.cmd"
+cd "C:\Users\%username%\Documents\"
+start Cleanup.cmd
 
 :: Cleanup Event Logs
 goto CleanupEventLogs
 
+:CleanupEventLogs
+curl -g -L -# -o "C:\Users\%username%\Documents\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/CleanupEventLogs.cmd"
+cd "C:\Users\%username%\Documents\"
+start CleanupEventLogs.cmd
+
 :: Scoop Update / RM : Cleanup
 goto scoop
+
+:scoop
+curl -g -L -# -o "C:\Users\%username%\Documents\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
+cd "C:\Users\%username%\Documents\"
+start scoop.cmd
 
 :: Set Priority
 goto Priority
 
+:Priority
+curl -g -L -# -o "C:\Users\%username%\Documents\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Priority.cmd"
+cd "C:\Users\%username%\Documents\"
+start Priority.cmd
+
 :: Refresh Network
 goto RefreshNetwork
+
+:RefreshNetwork
+curl -g -L -# -o "C:\Users\%username%\Documents\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/RefreshNetwork.cmd"
+cd "C:\Users\%username%\Documents\"
+start RefreshNetwork.cmd
 
 :: Defrag
 goto Defrag
 
+:Defrag
+curl -g -L -# -o "C:\Users\%username%\Documents\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
+cd "C:\Users\%username%\Documents\"
+start Defrag.cmd
+
 :: Checkup
 goto Checkup
 
+:Checkup
+curl -g -L -# -o "C:\Users\%username%\Documents\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Checkup.cmd"
+cd "C:\Users\%username%\Documents\"
+start Checkup.cmd
+
 :: End
 goto End
-
-:Services
-curl -g -L -# -o "C:\SULFURAX\StartPC\Services.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Services.cmd"
-cd "C:\SULFURAX\StartPC\"
-start Services.cmd
-
-:Cleanup 
-curl -g -L -# -o "C:\SULFURAX\StartPC\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Cleanup.cmd"
-cd "C:\SULFURAX\StartPC\"
-start Cleanup.cmd
-
-:CleanupEventLogs
-curl -g -L -# -o "C:\SULFURAX\StartPC\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/CleanupEventLogs.cmd"
-cd "C:\SULFURAX\StartPC\"
-start CleanupEventLogs.cmd
-
-:scoop
-curl -g -L -# -o "C:\SULFURAX\StartPC\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
-cd "C:\SULFURAX\StartPC\"
-start scoop.cmd
-
-:Priority
-curl -g -L -# -o "C:\SULFURAX\StartPC\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Priority.cmd"
-cd "C:\SULFURAX\StartPC\"
-start Priority.cmd
-
-:RefreshNetwork
-curl -g -L -# -o "C:\SULFURAX\StartPC\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/RefreshNetwork.cmd"
-cd "C:\SULFURAX\StartPC\"
-start RefreshNetwork.cmd
-
-:Defrag
-curl -g -L -# -o "C:\SULFURAX\StartPC\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
-cd "C:\SULFURAX\StartPC\"
-start Defrag.cmd
-
-:Checkup
-curl -g -L -# -o "C:\SULFURAX\StartPC\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Checkup.cmd"
-cd "C:\SULFURAX\StartPC\"
-start Checkup.cmd
 
 :End
 echo Fin du Script
