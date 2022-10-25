@@ -155,6 +155,7 @@ timeout /t 60
 goto End
 
 :End
+pause
 del /F /Q "C:\Users\%username%\Documents\Defrag.cmd"
 del /F /Q "C:\Users\%username%\Documents\scoop.cmd"
 
