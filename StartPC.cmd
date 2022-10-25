@@ -82,6 +82,8 @@ goto Checkup
 goto End
 
 :Services
+title Etape 1 : Services
+
 :: Start AppInfo Service
 sc config AppInfo start=auto
 sc start AppInfo
@@ -143,6 +145,8 @@ timeout /t 5 /nobreak
 cls
 
 :Cleanup 
+title Etape 2 : Cleanup
+
 cleanmgr.exe /d C: /SAGERUN:1
 
 rmdir /S /Q "C:\SULFURAX\StartPC\DeviceCleanupCmd\"
@@ -153,7 +157,7 @@ curl -g -L -# -o "C:\SULFURAX\StartPC\EmptyStandbyList.exe" "https://wj32.org/wp
 curl -g -L -# -o "C:\SULFURAX\StartPC\DeviceCleanupCmd.zip" "https://www.uwe-sieber.de/files/DeviceCleanupCmd.zip"
 curl -g -L -# -o "C:\SULFURAX\StartPC\AdwCleaner.exe" "https://adwcleaner.malwarebytes.com/adwcleaner?channel=release"
 
-powershell -NoProfile Expand-Archive 'C:\SULFURAX\StartPCs\DeviceCleanupCmd.zip' -DestinationPath 'C:\SULFURAX\StartPC\DeviceCleanupCmd\'
+powershell -NoProfile Expand-Archive 'C:\SULFURAX\StartPC\DeviceCleanupCmd.zip' -DestinationPath 'C:\SULFURAX\StartPC\DeviceCleanupCmd\'
 
 del /F /Q "C:\SULFURAX\StartPC\DeviceCleanupCmd.zip"
 del /Q C:\Users\%username%\AppData\Local\Microsoft\Windows\INetCache\IE\*.*
@@ -175,6 +179,8 @@ timeout /t 5 /nobreak
 cls
 
 :CleanupEventLogs
+title Etape 3 : Cleanup Event Logs
+
 FOR /F "tokens=1,2*" %%V IN ('bcdedit')
 for /F "tokens=*" %%G in ('wevtutil.exe el') DO (call :do_clear "%%G")
 echo.
@@ -191,6 +197,8 @@ timeout /t 5 /nobreak
 cls
 
 :scoop
+title Etape 4 : Scoop
+
 scoop update * && scoop cache rm * && scoop cleanup *
 
 :: Clear CMD
@@ -198,6 +206,8 @@ timeout /t 5 /nobreak
 cls
 
 :Priority
+title Etape 5 : Priority
+
 wmic process where name="svchost.exe" call setpriority 256
 
 :: Clear CMD
@@ -205,6 +215,8 @@ timeout /t 5 /nobreak
 cls
 
 :RefreshNetwork
+title Etape 6 : Refresh Network
+
 netsh advfirewall reset 
 ipconfig /release 
 ipconfig /renew 
@@ -218,6 +230,8 @@ timeout /t 5 /nobreak
 cls
 
 :Defrag
+title Etape 7 : Defrag
+
 defrag /c /o /u
 
 :: Clear CMD
@@ -225,6 +239,8 @@ timeout /t 5 /nobreak
 cls
 
 :Checkup
+title Etape 8 : Checkup
+
 sfc /scannow && DISM /Online /Cleanup-Image /CheckHealth && DISM /Online /Cleanup-Image /ScanHealth && DISM /Online /Cleanup-Image /RestoreHealth && Dism.exe /online /Cleanup-Image /StartComponentCleanup && Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
 
 :: Clear CMD
