@@ -44,9 +44,9 @@ powershell -ExecutionPolicy Unrestricted -NoProfile Checkpoint-Computer -Descrip
 ::HKCU & HKLM backup
 for /F "tokens=2" %%i in ('date /t') do set date=%%i
 set date1=%date:/=.%
->nul 2>&1 md C:\SULFURAX\Backup\%date1%
-reg export HKCU C:\SULFURAX\Backup\%date1%\HKLM.reg /y >nul 2>&1
-reg export HKCU C:\SULFURAX\Backup\%date1%\HKCU.reg /y >nul 2>&1
+>nul 2>&1 md C:\Users\%username%\Documents\SULFURAX\Backup\%date1%
+reg export HKCU C:\Users\%username%\Documents\SULFURAX\Backup\%date1%\HKLM.reg /y >nul 2>&1
+reg export HKCU C:\Users\%username%\Documents\SULFURAX\Backup\%date1%\HKCU.reg /y >nul 2>&1
 
 :: Script
 cls
