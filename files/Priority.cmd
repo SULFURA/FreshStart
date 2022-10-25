@@ -1,7 +1,6 @@
 @echo off
 color 03
 Mode 130,45
-setlocal EnableDelayedExpansion
 
 title Etape 5 : Priority
 

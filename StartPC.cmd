@@ -5,9 +5,9 @@ title Script StartPC
 setlocal EnableDelayedExpansion
 
 :: Dossier
-mkdir C:\Users\%username%\Documents\StartPC >nul 2>&1
-mkdir C:\Users\%username%\Documents\Backup >nul 2>&1
-cd C:\Users\%username%\Documents\StartPC >nul 2>&1
+mkdir C:\Users\%username%\Documents\SULFURAX\StartPC >nul 2>&1
+mkdir C:\Users\%username%\Documents\SULFURAX\Backup >nul 2>&1
+cd C:\Users\%username%\Documents\SULFURAX\StartPC >nul 2>&1
 
 :: Run Admin
 Reg.exe add HKLM /F >nul 2>&1
@@ -59,64 +59,64 @@ C:
 goto Services
 
 :Services
-curl -g -L -# -o "C:\Users\%username%\Documents\StartPC\Services.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Services.cmd"
-cd "C:\Users\%username%\Documents\"
-start Services.cmd
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Services.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Services.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
+start Services.cmd >nul 2>&1
 
 :: Cleanup
 goto Cleanup
 
 :Cleanup 
-curl -g -L -# -o "C:\Users\%username%\Documents\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Cleanup.cmd"
-cd "C:\Users\%username%\Documents\"
-start Cleanup.cmd
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Cleanup.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
+start Cleanup.cmd >nul 2>&1
 
 :: Cleanup Event Logs
 goto CleanupEventLogs
 
 :CleanupEventLogs
-curl -g -L -# -o "C:\Users\%username%\Documents\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/CleanupEventLogs.cmd"
-cd "C:\Users\%username%\Documents\"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/CleanupEventLogs.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start CleanupEventLogs.cmd
 
 :: Scoop Update / RM : Cleanup
 goto scoop
 
 :scoop
-curl -g -L -# -o "C:\Users\%username%\Documents\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
-cd "C:\Users\%username%\Documents\"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start scoop.cmd
 
 :: Set Priority
 goto Priority
 
 :Priority
-curl -g -L -# -o "C:\Users\%username%\Documents\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Priority.cmd"
-cd "C:\Users\%username%\Documents\"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Priority.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Priority.cmd
 
 :: Refresh Network
 goto RefreshNetwork
 
 :RefreshNetwork
-curl -g -L -# -o "C:\Users\%username%\Documents\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/RefreshNetwork.cmd"
-cd "C:\Users\%username%\Documents\"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/RefreshNetwork.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start RefreshNetwork.cmd
 
 :: Defrag
 goto Defrag
 
 :Defrag
-curl -g -L -# -o "C:\Users\%username%\Documents\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
-cd "C:\Users\%username%\Documents\"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Defrag.cmd
 
 :: Checkup
 goto Checkup
 
 :Checkup
-curl -g -L -# -o "C:\Users\%username%\Documents\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Checkup.cmd"
-cd "C:\Users\%username%\Documents\"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Checkup.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 start Checkup.cmd
 
 :: End
