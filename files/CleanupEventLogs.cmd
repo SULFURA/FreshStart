@@ -4,6 +4,7 @@ IF (%adminTest%)==(Access) goto noAdmin
 for /F "tokens=*" %%G in ('wevtutil.exe el') DO (call :do_clear "%%G")
 echo.
 echo All Event Logs have been cleared!
+goto close
 
 :do_clear
 echo clearing %1
@@ -16,6 +17,7 @@ echo This .BAT file must be run with administrative privileges.
 echo Exit now, right click on this .BAT file, and select "Run as administrator".  
 pause >nul
 
+:close
 :: Clear CMD
 timeout /t 5 /nobreak
 cls
