@@ -57,7 +57,7 @@ title Script en cours...
 ::NSudo
 C:
 rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-curl - g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\NSudo.exe" "https://github.com/SULFURA/StartPC/raw/main/files/NSudo.exe"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\NSudo.exe" "https://github.com/SULFURA/StartPC/raw/main/files/NSudo.exe"
 
 :: Services
 goto Services
