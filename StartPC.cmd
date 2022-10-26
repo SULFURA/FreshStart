@@ -36,6 +36,9 @@ IF "%local%" gtr "%localtwo%" (
     call %0
 	exit /b
 )
+goto NSudo
+goto scoop 
+goto Defrag
 
 :: Restore Point
 powershell -ExecutionPolicy Unrestricted -NoProfile Enable-ComputerRestore -Drive 'C:\', 'D:\', 'E:\', 'F:\', 'G:\' >nul 2>&1
@@ -55,6 +58,8 @@ title Script en cours...
 
 :Script
 ::NSudo
+
+:NSudo
 C:
 rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\NSudo.exe" "https://github.com/SULFURA/StartPC/raw/main/files/NSudo.exe"
