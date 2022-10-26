@@ -1,14 +1,6 @@
 @echo off
 color 03
 Mode 130,45
-goto Cleanup
-goto Cleanup
-goto Cleanup
-goto Cleanup
-goto Cleanup
-goto Cleanup
-goto Cleanup
-goto Cleanup
 title Etape 1 : Services
 
 :: Start AppInfo Service
@@ -68,6 +60,7 @@ sc config WSearch start= AUTO
 sc start WSearch
 
 :: Clear CMD
+pause
 timeout /t 5 /nobreak
 cls
 exit
