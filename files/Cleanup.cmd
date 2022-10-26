@@ -13,7 +13,7 @@ rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\StartPC\DeviceCleanupCmd\"
 del /F /Q "C:\Users\%username%\Documents\SULFURAX\StartPC\AdwCleaner.exe"
 del /F /Q "C:\Users\%username%\Documents\SULFURAX\StartPC\EmptyStandbyList.exe"
 
-REM curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\EmptyStandbyList.exe" "https://wj32.org/wp/download/1455/"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\EmptyStandbyList.exe" "https://github.com/SULFURA/StartPC/raw/main/files/EmptyStandbyList.exe"
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\DeviceCleanupCmd.zip" "https://www.uwe-sieber.de/files/DeviceCleanupCmd.zip"
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\AdwCleaner.exe" "https://adwcleaner.malwarebytes.com/adwcleaner?channel=release"
 
@@ -30,7 +30,7 @@ del /Q C:\Windows\Prefetch\*.*
 cd C:\Users\%username%\Documents\SULFURAX\StartPC
 AdwCleaner.exe /eula /clean /noreboot
 
-REM for %%g in (workingsets modifiedpagelist standbylist priority0standbylist) do EmptyStandbyList.exe %%g
+for %%g in (workingsets modifiedpagelist standbylist priority0standbylist) do EmptyStandbyList.exe %%g
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\DeviceCleanupCmd\x64"
 DeviceCleanupCmd.exe *
 

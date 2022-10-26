@@ -60,7 +60,6 @@ sc config WSearch start= AUTO
 sc start WSearch
 
 :: Clear CMD
-pause
 timeout /t 5 /nobreak
 cls
 exit
