@@ -20,7 +20,7 @@ sc config CDPUserSvc_1675c6 start=auto
 sc start CDPUserSvc_1675c6
 
 :: Stop clicktorunsvc Service
-sc config clicktorunsvc start=disabled
+sc config clicktorunsvc start=demand
 sc stop clicktorunsvc
 
 :: Start DiagTrack Service
