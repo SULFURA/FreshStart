@@ -99,7 +99,7 @@ goto scoop
 
 :scoop
 cls
-curl -g -L -# -o "C:\Users\%username%\Documents\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd"
 echo.
@@ -135,7 +135,7 @@ goto Defrag
 
 :Defrag
 cls
-curl -g -L -# -o "C:\Users\%username%\Documents\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd"
 echo.
