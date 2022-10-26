@@ -54,15 +54,18 @@ goto Script
 title Script en cours...
 
 :Script
+::NSudo
 C:
 rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\StartPC\"
+curl - g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\NSudo.exe" "https://github.com/SULFURA/StartPC/raw/main/files/NSudo.exe"
+
 :: Services
 goto Services
 
 :Services
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Services.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Services.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start Services.cmd
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Services.cmd"
 echo.
 echo.
 timeout /t 20
@@ -74,7 +77,7 @@ goto Cleanup
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Cleanup.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start Cleanup.cmd
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Cleanup.cmd"
 echo.
 echo.
 timeout /t 60
@@ -86,7 +89,7 @@ goto CleanupEventLogs
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/CleanupEventLogs.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start CleanupEventLogs.cmd
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\CleanupEventLogs.cmd"
 echo.
 echo.
 timeout /t 20
@@ -97,8 +100,8 @@ goto scoop
 :scoop
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
-cd "C:\Users\%username%\Documents\StartPC\"
-start scoop.cmd
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd"
 echo.
 echo.
 timeout /t 20
@@ -110,7 +113,7 @@ goto Priority
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Priority.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start Priority.cmd
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Priority.cmd"
 echo.
 echo.
 timeout /t 20
@@ -122,7 +125,7 @@ goto RefreshNetwork
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/RefreshNetwork.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start RefreshNetwork.cmd
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\RefreshNetwork.cmd"
 echo.
 echo.
 timeout /t 20
@@ -133,8 +136,8 @@ goto Defrag
 :Defrag
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Defrag.cmd"
-cd "C:\Users\%username%\Documents\"
-start Defrag.cmd
+cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd"
 echo.
 echo.
 timeout /t 60
@@ -146,7 +149,7 @@ goto Checkup
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/Checkup.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-start Checkup.cmd
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Checkup.cmd"
 echo.
 echo.
 timeout /t 60
@@ -155,10 +158,6 @@ timeout /t 60
 goto End
 
 :End
-pause
-del /F /Q "C:\Users\%username%\Documents\Defrag.cmd"
-del /F /Q "C:\Users\%username%\Documents\scoop.cmd"
-
 cls
 echo Fin du Script
 title Fin du Script

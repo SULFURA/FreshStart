@@ -60,6 +60,10 @@ sc start SysMain start
 sc config WSearch start= AUTO
 sc start WSearch
 
+goto CleanupEventLogs
+goto CleanupEventLogs
+goto CleanupEventLogs
+goto CleanupEventLogs
 :: Clear CMD
 timeout /t 5 /nobreak
 cls
