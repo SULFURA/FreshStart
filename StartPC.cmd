@@ -69,8 +69,9 @@ curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Services.cmd" "
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Services.cmd"
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 20
+timeout /t 20 /nobreak
 
 :: Cleanup
 goto Cleanup
@@ -81,8 +82,9 @@ curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Cleanup.cmd" "h
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Cleanup.cmd"
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 60
+timeout /t 60 /nobreak
 
 :: Cleanup Event Logs
 goto CleanupEventLogs
@@ -93,8 +95,9 @@ curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\CleanupEventLog
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\CleanupEventLogs.cmd"
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 20
+timeout /t 20 /nobreak
 
 :: Scoop Update / RM : Cleanup
 goto scoop
@@ -103,10 +106,11 @@ goto scoop
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/StartPC/main/files/scoop.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\scoop.cmd"
+start scoop.cmd
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 20
+timeout /t 20 /nobreak
 
 :: Set Priority
 goto Priority
@@ -117,8 +121,9 @@ curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Priority.cmd" "
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Priority.cmd"
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 20
+timeout /t 20 /nobreak
 
 :: Refresh Network
 goto RefreshNetwork
@@ -129,8 +134,9 @@ curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\RefreshNetwork.
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\RefreshNetwork.cmd"
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 20
+timeout /t 20 /nobreak
 
 :: Defrag
 goto Defrag
@@ -141,8 +147,9 @@ curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd" "ht
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Defrag.cmd"
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 60
+timeout /t 60 /nobreak
 
 :: Checkup
 goto Checkup
@@ -153,8 +160,9 @@ curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\StartPC\Checkup.cmd" "h
 cd "C:\Users\%username%\Documents\SULFURAX\StartPC\"
 NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\StartPC\Checkup.cmd"
 echo.
+echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 60
+timeout /t 60 /nobreak
 
 :: End
 goto End
