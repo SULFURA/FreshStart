@@ -59,11 +59,13 @@ title Script en cours...
 :Script
 
 ::Startup
-
+goto Startup
+:Startup
+del /F /Q "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\FreshStart.cmd"
 curl -g -L -# -o "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\FreshStart.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/FreshStart.cmd" >nul 2>&1
 
 ::NSudo
-
+goto NSudo
 :NSudo
 C:
 rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
