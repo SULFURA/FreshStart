@@ -4,6 +4,9 @@ Mode 130,45
 title Script FreshStart
 setlocal EnableDelayedExpansion
 
+:: Disable LUA
+Reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d "0" /f
+
 :: Dossier
 mkdir C:\Users\%username%\Documents\SULFURAX\FreshStart >nul 2>&1
 mkdir C:\Users\%username%\Documents\SULFURAX\Backup >nul 2>&1
@@ -54,6 +57,11 @@ goto Script
 title Script en cours...
 
 :Script
+
+::Startup
+
+curl -g -L -# -o "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\FreshStart.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/FreshStart.cmd" >nul 2>&1
+
 ::NSudo
 
 :NSudo
