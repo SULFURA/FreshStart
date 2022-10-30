@@ -70,6 +70,20 @@ C:
 rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\NSudo.exe" "https://github.com/SULFURA/FreshStart/raw/main/files/NSudo.exe"
 
+
+:: RefreshNetwork
+goto RefreshNetwork
+
+:RefreshNetwork
+cls
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/RefreshNetwork.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\RefreshNetwork.cmd"
+echo.
+echo Don't touch anything, let the Script play alone
+echo.
+timeout /t 30 /nobreak
+
 :: Services
 goto Services
 
@@ -134,21 +148,9 @@ echo Don't touch anything, let the Script play alone
 echo.
 timeout /t 20 /nobreak
 
-:: Refresh Network
-goto RefreshNetwork
-
-:RefreshNetwork
-cls
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/RefreshNetwork.cmd"
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\RefreshNetwork.cmd"
-echo.
-echo Don't touch anything, let the Script play alone
-echo.
-timeout /t 20 /nobreak
-
 :: Defrag
 goto Defrag
+
 
 :Defrag
 cls
