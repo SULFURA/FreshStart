@@ -1,7 +1,7 @@
 @echo off
 color 03
 Mode 130,45
-title Script FreshStart 1.1.1.1
+title Script FreshStart 1.1.1
 setlocal EnableDelayedExpansion
 
 :: Disable LUA
