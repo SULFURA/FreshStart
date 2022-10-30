@@ -35,7 +35,7 @@ if exist "%temp%\Updater.bat" DEL /S /Q /F "%temp%\Updater.bat" >nul 2>&1
 curl -g -L -# -o "%temp%\Updater.bat" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/FreshStart_Version" >nul 2>&1
 call "%temp%\Updater.bat"
 IF "%local%" gtr "%localtwo%" (
-    curl -L -o %0 "https://github.com/SULFURA/FreshStart/main/FreshStart.cmd" >nul 2>&1
+    curl -L -o %0 "https://github.com/SULFURA/FreshStart/releases/download/1.1.1/FreshStart.cmd" >nul 2>&1
     call %0
 	exit /b
 )
