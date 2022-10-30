@@ -2,7 +2,7 @@
 color 03
 Mode 130,45
 
-title Etape 6 : Refresh Network
+title Etape 1 : Refresh Network
 
 netsh advfirewall reset 
 ipconfig /release 

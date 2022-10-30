@@ -1,7 +1,7 @@
 @echo off
 color 03
 Mode 130,45
-title Etape 1 : Services
+title Etape 2 : Services
 
 :: Start AppInfo Service
 sc config AppInfo start=auto

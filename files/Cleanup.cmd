@@ -2,7 +2,7 @@
 color 03
 Mode 130,45
 C:
-title Etape 2 : Cleanup
+title Etape 3 : Cleanup
 
 echo Click on the cleaner in your taskbar and put your mouse on the window
 cd "C:\Users\%username%\Documents\SULFURAX\FreshStart"
