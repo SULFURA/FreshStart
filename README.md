@@ -9,11 +9,11 @@
 
 <h4 align="center"><a href="https://github.com/SULFURA/FreshStart/releases/latest" target="_blank">FreshStart</a> is a free and open source Windows script that aims to have a better Windows startup (performance, updates, etc...) </h4>
 
-[![Contributors][contributors-shield]][https://github.com/SULFURA/FreshStart/graphs/contributors]
-[![Forks][forks-shield]][https://github.com/SULFURA/FreshStart/network/members]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][https://github.com/SULFURA/FreshStart/issues]
-[![GNU AGPLv3 License][license-shield]][https://github.com/SULFURA/FreshStart/blob/main/LICENCE.md]
+[![Issues][issues-shield]][issues-url]
+[![GNU AGPLv3 License][license-shield]][license-url]
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -60,3 +60,16 @@ GNU Affero General Public License v3.0
 > Twitch [@sulfur4x](https://www.twitch.tv/sulfur4x) &nbsp;&middot;&nbsp;
 > Twitter [@isulfurax](https://twitter.com/isulfurax) &nbsp;&middot;&nbsp;
 > YouTube [@SULFURAX](https://youtube.com/SULFURAX)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-url]: https://github.com/SULFURA/FreshStart/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-url]: https://github.com/SULFURA/FreshStart/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-url]: https://github.com/SULFURA/FreshStart/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-url]: https://github.com/SULFURA/FreshStart/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-url]: https://github.com/SULFURA/FreshStart/blob/main/LICENCE.md
