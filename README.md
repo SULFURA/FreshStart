@@ -45,6 +45,8 @@ To use this script, download it <a href="https://github.com/SULFURA/FreshStart/r
 This will run the script by itself at all your startups. 
 You will have to let it run by itself, just for the Cleanup step, you will be asked in a cmd window to put your mouse on a certain application that will open.
 
+This is totally normal if your firewall asks you again to re-authorize each of the applications at each startup, take this as a security for you, if you have malware, you will see it
+
 ## Download
 
 You can [download](https://github.com/SULFURA/FreshStart/releases/latest) the latest installable version of Markdownify for Windows, macOS and Linux.
