@@ -1,7 +1,7 @@
 @echo off
 color 03
 Mode 130,45
-title Script FreshStart 1.4
+title Script FreshStart 1.4.1
 setlocal EnableDelayedExpansion
 
 :: Disable LUA
@@ -29,7 +29,7 @@ Reg add HKCU\CONSOLE /v VirtualTerminalLevel /t REG_DWORD /d 1 /f >nul 2>&1
 goto CheckUpdates
 
 :CheckUpdates
-set local=1.4
+set local=1.4.1
 set localtwo=%local%
 if exist "%temp%\Updater.bat" DEL /S /Q /F "%temp%\Updater.bat" >nul 2>&1
 curl -g -L -# -o "%temp%\Updater.bat" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/FreshStart_Version" >nul 2>&1
@@ -175,7 +175,7 @@ goto WUpdate
 
 :WUpdate
 cls
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Wupdate.cmd"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WUpdate.cmd"
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.ps1" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WUpdate.ps1"
 cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
 start WUpdate.cmd
