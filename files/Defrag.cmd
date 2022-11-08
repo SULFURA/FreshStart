@@ -1,5 +1,4 @@
 @echo off
-title Etape 7 : Defrag
 C:
 c:\WINDOWS\system32\defrag /c /o /u
 

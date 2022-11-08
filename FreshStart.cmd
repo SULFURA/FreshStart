@@ -1,7 +1,7 @@
 @echo off
 color 03
 Mode 130,45
-title Script FreshStart 1.1.2
+title Script FreshStart 1.2
 setlocal EnableDelayedExpansion
 
 :: Disable LUA
@@ -29,13 +29,13 @@ Reg add HKCU\CONSOLE /v VirtualTerminalLevel /t REG_DWORD /d 1 /f >nul 2>&1
 goto CheckUpdates
 
 :CheckUpdates
-set local=1.1.2
+set local=1.2
 set localtwo=%local%
 if exist "%temp%\Updater.bat" DEL /S /Q /F "%temp%\Updater.bat" >nul 2>&1
 curl -g -L -# -o "%temp%\Updater.bat" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/FreshStart_Version" >nul 2>&1
 call "%temp%\Updater.bat"
 IF "%local%" gtr "%localtwo%" (
-    curl -L -o %0 "https://github.com/SULFURA/FreshStart/releases/download/1.1.2/FreshStart.cmd" >nul 2>&1
+    curl -L -o %0 "https://github.com/SULFURA/FreshStart/releases/download/1.2/FreshStart.cmd" >nul 2>&1
     call %0
 	exit /b
 )
@@ -130,6 +130,19 @@ cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/scoop.cmd"
 cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
 start scoop.cmd
+echo.
+echo Don't touch anything, let the Script play alone
+echo.
+timeout /t 20 /nobreak
+
+:: Set Winget
+goto Winget
+
+:Winget
+cls
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\Winget.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Winget.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
+start Winget.cmd
 echo.
 echo Don't touch anything, let the Script play alone
 echo.

@@ -2,8 +2,7 @@
 color 03
 Mode 130,45
 
-
-wmic process where name="svchost.exe" call setpriority 256
+winget upgrade -all
 
 :: Clear CMD
 timeout /t 5 /nobreak
