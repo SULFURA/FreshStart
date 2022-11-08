@@ -9,11 +9,11 @@
 
 <h4 align="center"><a href="https://github.com/SULFURA/FreshStart/releases/latest" target="_blank">FreshStart</a> is a free and open source Windows script that aims to have a better Windows startup (performance, updates, etc...) </h4>
 
-<h4 align="center">[![Contributors][contributors-shield]][contributors-url]
+[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![GNU AGPLv3 License][license-shield]][license-url]</h4>
+[![GNU AGPLv3 License][license-shield]][license-url]
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
