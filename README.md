@@ -45,7 +45,8 @@ To use this script, download it <a href="https://github.com/SULFURA/FreshStart/r
 This will run the script by itself at all your startups. 
 You will have to let it run by itself, just for the Cleanup step, you will be asked in a cmd window to put your mouse on a certain application that will open.
 
-This is totally normal if your firewall asks you again to re-authorize each of the applications at each startup, take this as a security for you, if you have malware, you will see it
+This is totally normal if your firewall asks you again to re-authorize each of the applications at each startup, take this as a security for you, if you have malware, you will see it.
+You can minimize all windows in the taskbar and let it run in the background, everything will close by itself once finished.
 
 ## Download
 
