@@ -148,6 +148,19 @@ echo Don't touch anything, let the Script play alone
 echo.
 timeout /t 50 /nobreak
 
+:: Set WUpdate
+goto WUpdate
+
+:WUpdate
+cls
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Wupdate.cmd"
+cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
+start WUpdate.cmd
+echo.
+echo Don't touch anything, let the Script play alone
+echo.
+timeout /t 50 /nobreak
+
 :: Set Priority
 goto Priority
 
