@@ -146,7 +146,7 @@ start Winget.cmd
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 20 /nobreak
+timeout /t 50 /nobreak
 
 :: Set Priority
 goto Priority
