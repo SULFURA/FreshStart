@@ -154,7 +154,7 @@ goto WUpdate
 :WUpdate
 cls
 curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Wupdate.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.ps1" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Wupdate.ps1"
+curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.ps1" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WUpdate.ps1"
 cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
 start WUpdate.cmd
 echo.
