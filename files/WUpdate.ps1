@@ -1,5 +1,5 @@
 
-Set-ExecutionPolicy �ExecutionPolicy RemoteSigned -force
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -force
 
 Install-Module -Name PSWindowsUpdate -Force
 
