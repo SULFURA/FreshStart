@@ -50,7 +50,7 @@ You can minimize all windows in the taskbar and let it run in the background, ev
 
 ## Download
 
-You can [download](https://github.com/SULFURA/FreshStart/releases/latest) the latest installable version of Markdownify for Windows, macOS and Linux.
+You can [download](https://github.com/SULFURA/FreshStart/releases/latest) the latest version
 
 ## License
 
