@@ -1,7 +1,7 @@
 @echo off & setlocal
 set batchPath=%~dp0
 C:
-powershell.exe -noexit "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.ps1"
+powershell.exe "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.ps1"
 
 :: Clear CMD
 timeout /t 5 /nobreak
