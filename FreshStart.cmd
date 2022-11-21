@@ -174,7 +174,7 @@ NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\CleanupEv
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
-timeout /t 30 /nobreak
+timeout /t 40 /nobreak
 
 :: Scoop Update / RM : Cleanup
 goto scoop
