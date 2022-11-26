@@ -16,16 +16,16 @@
 @echo off
 color 03
 Mode 130,45
-title Script FreshStart 1.5
+title Script FreshStart 1.6
 setlocal EnableDelayedExpansion
 
 :: Disable LUA
 Reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d "0" /f
 
 :: Dossier
-mkdir C:\Users\%username%\Documents\SULFURAX\FreshStart >nul 2>&1
-mkdir C:\Users\%username%\Documents\SULFURAX\Backup >nul 2>&1
-cd C:\Users\%username%\Documents\SULFURAX\FreshStart >nul 2>&1
+mkdir C:\SULFURAX\FreshStart >nul 2>&1
+mkdir C:\SULFURAX\Backup >nul 2>&1
+cd C:\SULFURAX\FreshStart >nul 2>&1
 
 :: Run Admin
 Reg.exe add HKLM /F >nul 2>&1
@@ -44,7 +44,7 @@ Reg add HKCU\CONSOLE /v VirtualTerminalLevel /t REG_DWORD /d 1 /f >nul 2>&1
 goto CheckUpdates
 
 :CheckUpdates
-set local=1.5
+set local=1.6
 set localtwo=%local%
 if exist "%temp%\Updater.bat" DEL /S /Q /F "%temp%\Updater.bat" >nul 2>&1
 curl -g -L -# -o "%temp%\Updater.bat" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/FreshStart_Version" >nul 2>&1
@@ -84,9 +84,9 @@ powershell -ExecutionPolicy Unrestricted -NoProfile Checkpoint-Computer -Descrip
 ::HKCU & HKLM backup
 for /F "tokens=2" %%i in ('date /t') do set date=%%i
 set date1=%date:/=.%
->nul 2>&1 md C:\Users\%username%\Documents\SULFURAX\Backup\%date1%
-reg export HKCU C:\Users\%username%\Documents\SULFURAX\Backup\%date1%\HKLM.reg /y >nul 2>&1
-reg export HKCU C:\Users\%username%\Documents\SULFURAX\Backup\%date1%\HKCU.reg /y >nul 2>&1
+>nul 2>&1 md C:\SULFURAX\Backup\%date1%
+reg export HKCU C:\SULFURAX\Backup\%date1%\HKLM.reg /y >nul 2>&1
+reg export HKCU C:\SULFURAX\Backup\%date1%\HKCU.reg /y >nul 2>&1
 
 :: Script
 cls
@@ -104,8 +104,8 @@ curl -g -L -# -o "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Me
 goto NSudo
 :NSudo
 C:
-rmdir /S /Q "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\NSudo.exe" "https://github.com/SULFURA/FreshStart/raw/main/files/NSudo.exe"
+rmdir /S /Q "C:\SULFURAX\FreshStart\"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\NSudo.exe" "https://github.com/SULFURA/FreshStart/raw/main/files/NSudo.exe"
 
 :: DownloadScripts
 goto DownloadScripts
@@ -115,26 +115,26 @@ cls
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/RefreshNetwork.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\Services.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Services.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Cleanup.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/CleanupEventLogs.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/scoop.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\Winget.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Winget.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WUpdate.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.ps1" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WUpdate.ps1"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Priority.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Defrag.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Checkup.cmd"
-curl -g -L -# -o "C:\Users\%username%\Documents\SULFURAX\FreshStart\WDefender.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WDefender.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/RefreshNetwork.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\Services.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Services.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Cleanup.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/CleanupEventLogs.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/scoop.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\Winget.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Winget.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\WUpdate.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WUpdate.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\WUpdate.ps1" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WUpdate.ps1"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\Priority.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Priority.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\Defrag.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Defrag.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\Checkup.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Checkup.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\WDefender.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/WDefender.cmd"
 
 :: RefreshNetwork
 goto RefreshNetwork
 
 :RefreshNetwork
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\RefreshNetwork.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\RefreshNetwork.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
@@ -145,8 +145,8 @@ goto Services
 
 :Services
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\Services.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\Services.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
@@ -157,8 +157,8 @@ goto Cleanup
 
 :Cleanup 
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\Cleanup.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\Cleanup.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
@@ -169,8 +169,8 @@ goto CleanupEventLogs
 
 :CleanupEventLogs
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\CleanupEventLogs.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\CleanupEventLogs.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
@@ -181,7 +181,7 @@ goto scoop
 
 :scoop
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
+cd "C:\SULFURAX\FreshStart\"
 start scoop.cmd
 echo.
 echo Don't touch anything, let the Script play alone
@@ -193,7 +193,7 @@ goto Winget
 
 :Winget
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
+cd "C:\SULFURAX\FreshStart\"
 start Winget.cmd
 echo.
 echo Don't touch anything, let the Script play alone
@@ -205,7 +205,7 @@ goto WUpdate
 
 :WUpdate
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
+cd "C:\SULFURAX\FreshStart\"
 start WUpdate.cmd
 echo.
 echo Don't touch anything, let the Script play alone
@@ -217,8 +217,8 @@ goto Priority
 
 :Priority
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\Priority.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\Priority.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
@@ -230,8 +230,8 @@ goto Defrag
 
 :Defrag
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\Defrag.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\Defrag.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
@@ -242,8 +242,8 @@ goto Checkup
 
 :Checkup
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\Checkup.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\Checkup.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.
@@ -254,8 +254,8 @@ goto WDefender
 
 :WDefender
 cls
-cd "C:\Users\%username%\Documents\SULFURAX\FreshStart\"
-NSudo.exe -U:T -P:E "C:\Users\%username%\Documents\SULFURAX\FreshStart\WDefender.cmd"
+cd "C:\SULFURAX\FreshStart\"
+NSudo.exe -U:T -P:E "C:\SULFURAX\FreshStart\WDefender.cmd"
 echo.
 echo Don't touch anything, let the Script play alone
 echo.

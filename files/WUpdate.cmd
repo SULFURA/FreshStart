@@ -4,7 +4,7 @@ C:
 goto msg
 
 :script
-powershell.exe "C:\Users\%username%\Documents\SULFURAX\FreshStart\WUpdate.ps1"
+powershell.exe "C:\SULFURAX\FreshStart\WUpdate.ps1"
 :: Clear CMD
 timeout /t 5 /nobreak
 cls
