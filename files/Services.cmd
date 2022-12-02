@@ -1,6 +1,7 @@
 @echo off
 color 03
 Mode 130,45
+C:
 
 :: Start AppInfo Service
 sc config AppInfo start=auto

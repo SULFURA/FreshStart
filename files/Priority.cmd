@@ -1,6 +1,7 @@
 @echo off
 color 03
 Mode 130,45
+C:
 
 
 wmic process where name="svchost.exe" call setpriority 256
