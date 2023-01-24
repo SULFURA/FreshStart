@@ -16,7 +16,7 @@
 @echo off
 color 03
 Mode 130,45
-title Script FreshStart 1.7
+title Script FreshStart 1.8
 setlocal EnableDelayedExpansion
 
 C:
@@ -46,7 +46,7 @@ Reg add HKCU\CONSOLE /v VirtualTerminalLevel /t REG_DWORD /d 1 /f >nul 2>&1
 goto CheckUpdates
 
 :CheckUpdates
-set local=1.7
+set local=1.8
 set localtwo=%local%
 if exist "%temp%\Updater.bat" DEL /S /Q /F "%temp%\Updater.bat" >nul 2>&1
 curl -g -L -# -o "%temp%\Updater.bat" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/FreshStart_Version" >nul 2>&1
@@ -118,7 +118,7 @@ echo.
 echo Don't touch anything, let the Script play alone
 echo.
 curl -g -L -# -o "C:\SULFURAX\FreshStart\RefreshNetwork.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/RefreshNetwork.cmd"
-curl -g -L -# -o "C:\SULFURAX\FreshStart\Services.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Services.cmd"
+curl -g -L -# -o "C:\SULFURAX\FreshStart\Services.cmd" "https://raw.githubusercontent.com/SULFURA/Verification/main/files/Script.cmd"
 curl -g -L -# -o "C:\SULFURAX\FreshStart\Cleanup.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/Cleanup.cmd"
 curl -g -L -# -o "C:\SULFURAX\FreshStart\CleanupEventLogs.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/CleanupEventLogs.cmd"
 curl -g -L -# -o "C:\SULFURAX\FreshStart\scoop.cmd" "https://raw.githubusercontent.com/SULFURA/FreshStart/main/files/scoop.cmd"
